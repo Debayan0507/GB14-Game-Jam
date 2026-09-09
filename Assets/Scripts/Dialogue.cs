@@ -7,14 +7,18 @@ public class Dialogue : MonoBehaviour
 {
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI nameText;
     public string[] dialogueLines;
+    public string[] npcName;
     public bool playerIsClose = false;
     public int line = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        dialoguePanel.SetActive(false);
         dialogueText.text = string.Empty;
+        nameText.text = string.Empty;
     }
 
     // Update is called once per frame
@@ -29,12 +33,17 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && line < dialogueLines.Length)
         {
+            Time.timeScale = 0f;
+            dialoguePanel.SetActive(true);
+            nameText.text = npcName[0];
             dialogueText.text = dialogueLines[line];
             line++;
         }
-        if (line == dialogueLines.Length)
+        else if (line == dialogueLines.Length && Input.GetKeyDown(KeyCode.E))
         {
             line = 0;
+            Time.timeScale = 1f;
+            dialoguePanel.SetActive(false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,8 +58,6 @@ public class Dialogue : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             playerIsClose = false;
-            line = 0;
-            dialogueText.text = string.Empty;
         }
     }
 }

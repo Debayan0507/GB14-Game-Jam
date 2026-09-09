@@ -18,8 +18,11 @@ public class PlayerMovement : MonoBehaviour
     }
     void Move()
     {
+        // Get the horizontal and vertical input from the player
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+
+        // Move the player based on the input and move speed
         transform.Translate(Vector2.right * moveSpeed * horizontalInput * Time.deltaTime);
         transform.Translate(Vector2.up * moveSpeed * verticalInput * Time.deltaTime);
     }
