@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c5adb6bdd8532204cb0b1c1d523b79a7
+guid: c779ea5157ff68a4ca428f384a632e15
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4084549679696721064
-    second: canopy_0
+      213: -8602327060813298552
+    second: canopy-Recovered_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: canopy_0
+      name: canopy-Recovered_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85bcd3a05b3c057c0800000000000000
-      internalID: -4084549679696721064
+      spriteID: 8844e728d156e9880800000000000000
+      internalID: -8602327060813298552
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      canopy_0: -4084549679696721064
+      canopy-Recovered_0: -8602327060813298552
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

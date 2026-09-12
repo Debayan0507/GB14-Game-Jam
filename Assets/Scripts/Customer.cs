@@ -17,15 +17,23 @@ public class Customer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isWaiting == false)
+        MoveToStall();
+        MoveToSpawn();
+    }
+    void MoveToStall()
+    {
+        if (isWaiting == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, waitingPoint.transform.position, speed * Time.deltaTime);
-            if(Vector3.Distance(transform.position, waitingPoint.transform.position) < 0.1f)
+            if (Vector3.Distance(transform.position, waitingPoint.transform.position) < 0.1f)
             {
                 isWaiting = true;
             }
         }
-        if(playerMovementScript2.itemGiven == true && isWaiting == true)
+    }
+    void MoveToSpawn()
+    {
+        if (playerMovementScript2.itemGiven == true && isWaiting == true)
         {
             StartCoroutine(ReturnToSpawn());
         }

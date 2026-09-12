@@ -159,6 +159,7 @@ MonoBehaviour:
   - Wassup
   npcName:
   - Kid
+  requiredItem: []
   playerIsClose: 0
   line: 0
 --- !u!61 &194667960
@@ -795,6 +796,8 @@ MonoBehaviour:
   - Me NPC
   npcName:
   - Grandma
+  requiredItem:
+  - Tomato
   playerIsClose: 0
   line: 0
 --- !u!61 &721314897
@@ -855,7 +858,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74593e553cddc39468b06b45bc0933e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
+  playerMovementScript2: {fileID: 0}
   waitingPoint: {fileID: 1266271561}
+  spawnPoint: {fileID: 0}
   speed: 2
   isWaiting: 0
 --- !u!95 &721314899
@@ -1436,7 +1441,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.000000007450581, y: 0.0019462109}
+  m_Offset: {x: 0, y: -0.07819933}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1446,7 +1451,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.32849568, y: 0.33442205}
+  m_Size: {x: 0.32849568, y: 0.17413098}
   m_EdgeRadius: 0
 --- !u!1 &1826699810
 GameObject:
@@ -1635,9 +1640,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b84e67b200fc94cb8ad3aeb5a814aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  dialogueScript: {fileID: 721314896}
   moveSpeed: 5
   horizontalInput: 0
   verticalInput: 0
+  items:
+  - Milk
+  - Tomato
+  j: 0
+  isItem: 0
+  isCustomer: 0
+  itemGiven: 0
+  nearBin: 0
+  itemTaken: 0
 --- !u!61 &1838035412
 BoxCollider2D:
   m_ObjectHideFlags: 0

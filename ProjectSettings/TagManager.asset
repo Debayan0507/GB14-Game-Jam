@@ -8,6 +8,7 @@ TagManager:
   - Customer
   - Dustbin
   - Tomato
+  - Milk
   layers:
   - Default
   - TransparentFX
