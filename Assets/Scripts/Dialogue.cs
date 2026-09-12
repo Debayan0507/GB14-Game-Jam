@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI nameText;
     public string[] dialogueLines;
     public string[] npcName;
+    public string[] requiredItem;
     public bool playerIsClose = false;
     public int line = 0;
 
