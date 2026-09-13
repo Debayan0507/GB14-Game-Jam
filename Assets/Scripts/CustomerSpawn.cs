@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CustomerSpawn : MonoBehaviour
 {
+    public GameObject customer;
     public GameObject[] customerPrefab;
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
@@ -19,17 +20,23 @@ public class CustomerSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(customerSpawned == false)
+        customer = GameObject.FindWithTag("Customer");
+        if (!customer && !customerSpawned)
         {
             StartCoroutine(SpawnCustomer());
         }
+        
     }
     IEnumerator SpawnCustomer()
     {
-        customerSpawned = true;
-        yield return new WaitForSeconds(5f);
-        Instantiate(customerPrefab[i], transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(3f);
-        i++;
+        if (i < customerPrefab.Length)
+        {
+            customerSpawned = true;
+            yield return new WaitForSeconds(5f);
+            Instantiate(customerPrefab[i], transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(3f);
+            customerSpawned = false;
+            i++;
+        }
     }
 }
