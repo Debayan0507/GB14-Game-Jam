@@ -1,15 +1,19 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class CustomerSpawn : MonoBehaviour
 {
     public GameObject[] customerPrefab;
+    public GameObject dialoguePanel;
+    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI nameText;
     int i = 0;
     public bool customerSpawned = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        dialoguePanel.SetActive(false);
     }
 
     // Update is called once per frame

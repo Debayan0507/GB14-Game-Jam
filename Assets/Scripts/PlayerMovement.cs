@@ -4,8 +4,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private Animator animator;
 
-    public Dialogue dialogueScript;
-
     private Vector2 movement;
 
     public float moveSpeed = 2.5f;
@@ -32,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         PickItem();
-        GiveItem();
+        //GiveItem();
         DumpItem();
         AnimatePlayer();
     }
@@ -45,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(Vector2.right * moveSpeed * horizontalInput * Time.deltaTime);
         transform.Translate(Vector2.up * moveSpeed * verticalInput * Time.deltaTime);
     }
-    void GiveItem()
+    /*void GiveItem()
     {
         if (itemTaken == true && isCustomer == true && Input.GetKeyDown(KeyCode.X))
         {
@@ -55,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
                 itemGiven = true;
             }
         }
-    }
+    }*/
     void DumpItem()
     {
         if(itemTaken == true && nearBin == true && Input.GetKeyDown(KeyCode.X))
