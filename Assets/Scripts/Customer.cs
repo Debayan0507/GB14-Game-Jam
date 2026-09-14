@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class Customer : MonoBehaviour
 {
+    private Animator customerAnimator;
+    public string[] dialogueLines;
+    public string[] requiredItem;
+    public string[] npcName;
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI nameText;
-    public string[] dialogueLines;
-    public string[] npcName;
 
     public bool playerIsClose = false;
     public int line = 0;
@@ -17,12 +19,12 @@ public class Customer : MonoBehaviour
     public PlayerMovement playerMovementScript;
     public GameObject waitingPoint;
     public GameObject spawnPoint;
-    public string[] requiredItem;
     public float speed = 2f;
     public bool isWaiting = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        customerAnimator = GetComponent<Animator>();
         waitingPoint = GameObject.Find("Customer Waiting Point");
         spawnPoint = GameObject.Find("Customer Spawn Point");
 
@@ -83,6 +85,7 @@ public class Customer : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, waitingPoint.transform.position, speed * Time.deltaTime);
             if (Vector3.Distance(transform.position, waitingPoint.transform.position) < 0.1f)
             {
+                customerAnimator.SetBool("isIdle", true);
                 isWaiting = true;
             }
         }
@@ -91,6 +94,8 @@ public class Customer : MonoBehaviour
     {
         if (playerMovementScript.itemGiven == true && isWaiting == true)
         {
+            customerAnimator.SetBool("isIdle", false);
+            customerAnimator.SetBool("moveUp", true);
             StartCoroutine(ReturnToSpawn());
         }
     }

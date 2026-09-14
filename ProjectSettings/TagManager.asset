@@ -9,6 +9,8 @@ TagManager:
   - Dustbin
   - Tomato
   - Milk
+  - LeftVehicle
+  - RightVehicle
   layers:
   - Default
   - TransparentFX
