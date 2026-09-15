@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         PickItem();
-        //GiveItem();
         DumpItem();
         AnimatePlayer();
     }
@@ -43,17 +42,6 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(Vector2.right * moveSpeed * horizontalInput * Time.deltaTime);
         transform.Translate(Vector2.up * moveSpeed * verticalInput * Time.deltaTime);
     }
-    /*void GiveItem()
-    {
-        if (itemTaken == true && isCustomer == true && Input.GetKeyDown(KeyCode.X))
-        {
-            if (dialogueScript.requiredItem[0] == items[j])
-            {
-                itemTaken = false;
-                itemGiven = true;
-            }
-        }
-    }*/
     void DumpItem()
     {
         if(itemTaken == true && nearBin == true && Input.GetKeyDown(KeyCode.X))
