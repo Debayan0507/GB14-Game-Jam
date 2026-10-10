@@ -53,7 +53,7 @@ public class MenuController : MonoBehaviour
     {
         // Position arrow next to the selected button
         selector.transform.position = new Vector3(
-            targetButton.position.x - 50, // offset to the left
+            targetButton.position.x - 150, // offset to the left
             targetButton.position.y,
             targetButton.position.z
         );

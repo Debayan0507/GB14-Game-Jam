@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         {
             itemTaken = true;
             isItem = false;
+            itemGiven = false;
         }
     }
     void AnimatePlayer()
@@ -76,16 +77,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 j = i;
                 isItem = true;
-                itemGiven = false;
+                
             }  
         }
         if (collision.gameObject.CompareTag("Dustbin"))
         {
             nearBin = true;
-        }
-        if (collision.gameObject.CompareTag("Customer"))
-        {
-            isCustomer = true;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -94,16 +91,26 @@ public class PlayerMovement : MonoBehaviour
         {
             nearBin = false;
         }
-        if (collision.gameObject.CompareTag("Customer"))
-        {
-            isCustomer = false;
-        }
         for (int i = 0; i < items.Length; i++)
         {
             if (collision.gameObject.tag == items[i] && itemTaken == false)
             {
                 isItem = false;
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Customer"))
+        {
+            isCustomer = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Customer"))
+        {
+            isCustomer = false;
         }
     }
 }
