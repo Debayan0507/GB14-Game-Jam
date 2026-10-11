@@ -55,7 +55,6 @@ public class Customer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && line < dialogueLines.Length)
         {
-            Time.timeScale = 0f;
             dialoguePanel.SetActive(true);
             nameText.text = npcName[0];
             dialogueText.text = dialogueLines[line];
@@ -64,7 +63,6 @@ public class Customer : MonoBehaviour
         else if (line == dialogueLines.Length && Input.GetKeyDown(KeyCode.E))
         {
             line = 0;
-            Time.timeScale = 1f;
             dialoguePanel.SetActive(false);
         }
     }
