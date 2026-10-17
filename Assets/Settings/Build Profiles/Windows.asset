@@ -26,8 +26,20 @@ MonoBehaviour:
     m_path: Assets/Scenes/Main Menu.unity
     m_guid: 98d990e10eda6754598792709e39fc20
   - m_enabled: 1
-    m_path: Assets/Scenes/RoadSide.unity
+    m_path: Assets/Scenes/Day 1.unity
     m_guid: 2298abfe51fbc7442900d545baa50695
+  - m_enabled: 1
+    m_path: Assets/Scenes/Day 2.unity
+    m_guid: 9e5a1fd066760154a9c125c35d8b1dfd
+  - m_enabled: 1
+    m_path: Assets/Scenes/Day 3.unity
+    m_guid: f16b461ad5995b54187cc957a22a673d
+  - m_enabled: 1
+    m_path: Assets/Scenes/Day 4.unity
+    m_guid: eb26a336d9b8aee41a52ddba7178be9d
+  - m_enabled: 1
+    m_path: Assets/Scenes/Day 5.unity
+    m_guid: adaefee95e9ed7f41bbaefafe670c74e
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:

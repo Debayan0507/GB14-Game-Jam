@@ -11,6 +11,9 @@ TagManager:
   - Milk
   - LeftVehicle
   - RightVehicle
+  - Canopy
+  - Candy
+  - Potato
   layers:
   - Default
   - TransparentFX

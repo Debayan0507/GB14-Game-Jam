@@ -20,12 +20,15 @@ public class Customer : MonoBehaviour
     public PlayerMovement playerMovementScript;
     public GameObject waitingPoint;
     public GameObject spawnPoint;
+    public GameObject endPoint;
+    public GameObject player;
     public float speed = 2f;
     public bool isWaiting = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         customerAnimator = GetComponent<Animator>();
+        endPoint = GameObject.Find("Customer End Point");
         waitingPoint = GameObject.Find("Customer Waiting Point");
         spawnPoint = GameObject.Find("Customer Spawn Point");
 
@@ -44,7 +47,7 @@ public class Customer : MonoBehaviour
     void Update()
     {
         MoveToStall();
-        MoveToSpawn();
+        MoveToEnd();
         GiveItem();
         if (playerIsClose)
         {
@@ -55,6 +58,7 @@ public class Customer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && line < dialogueLines.Length)
         {
+            playerMovementScript.ePlayer.SetActive(false);
             dialoguePanel.SetActive(true);
             nameText.text = npcName[0];
             dialogueText.text = dialogueLines[line];
@@ -62,6 +66,7 @@ public class Customer : MonoBehaviour
         }
         else if (line == dialogueLines.Length && Input.GetKeyDown(KeyCode.E))
         {
+            playerMovementScript.ePlayer.SetActive(true);
             line = 0;
             dialoguePanel.SetActive(false);
         }
@@ -74,6 +79,18 @@ public class Customer : MonoBehaviour
             {
                 playerMovementScript.itemTaken = false;
                 playerMovementScript.itemGiven = true;
+                playerMovementScript.inventoryText.text = "Inventory : None";
+                switch (playerMovementScript.j)
+                {
+                    case 0:
+                        playerMovementScript.money += 20;
+                        playerMovementScript.moneyText.text = $"Money : {playerMovementScript.money}";
+                        break;
+                    case 1:
+                        playerMovementScript.money += 30;
+                        playerMovementScript.moneyText.text = $"Money : {playerMovementScript.money}";
+                        break;
+                }
             }
         }
     }
@@ -89,18 +106,18 @@ public class Customer : MonoBehaviour
             }
         }
     }
-    void MoveToSpawn()
+    void MoveToEnd()
     {
         if (playerMovementScript.itemGiven == true && isWaiting == true)
         {
             customerAnimator.SetBool("isIdle", false);
             customerAnimator.SetBool("moveUp", true);
-            StartCoroutine(ReturnToSpawn());
+            StartCoroutine(GoToEnd());
         }
     }
-    IEnumerator ReturnToSpawn()
+    IEnumerator GoToEnd()
     {
-        transform.position = Vector3.MoveTowards(transform.position, spawnPoint.transform.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, endPoint.transform.position, speed * Time.deltaTime);
         yield return new WaitForSeconds(5f);
         playerMovementScript.itemGiven = false;
         Destroy(gameObject);

@@ -1,18 +1,25 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject xDustbin;
+    public GameObject xPlayer;
+    public GameObject ePlayer;
     private Animator animator;
 
     private Vector2 movement;
+
+    public TextMeshProUGUI inventoryText;
+    public TextMeshProUGUI moneyText;
 
     public float moveSpeed = 2.5f;
     public float horizontalInput;
     public float verticalInput;
 
     public int j;
-
-    public string[] items = {"Milk", "Tomato"};
+    public int money = 0;
+   public string[] items = {"Milk", "Tomato", "Candy", "Potato"};
 
     public bool isItem = false;
     public bool isCustomer = false;
@@ -22,6 +29,16 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        inventoryText = GameObject.Find("InventoryText").GetComponent<TextMeshProUGUI>();
+        inventoryText.text = "Inventory : None";
+        moneyText = GameObject.Find("MoneyText").GetComponent<TextMeshProUGUI>();
+        moneyText.text = "Money : 0";
+        ePlayer = GameObject.Find("EPlayer");
+        xPlayer = GameObject.Find("XPlayer");
+        ePlayer.SetActive(false);
+        xPlayer.SetActive(false);
+        xDustbin = GameObject.Find("XDustbin");
+        xDustbin.SetActive(false);
         animator = GetComponent<Animator>();
     }
 
@@ -44,18 +61,30 @@ public class PlayerMovement : MonoBehaviour
     }
     void DumpItem()
     {
-        if(itemTaken == true && nearBin == true && Input.GetKeyDown(KeyCode.X))
+        if(itemTaken == true && nearBin == true)
         {
-            itemTaken = false;
+            xDustbin.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                itemTaken = false;
+                xDustbin.SetActive(false);
+                inventoryText.text = "Inventory : None";
+            }
         }
     }
     void PickItem()
     {
-        if(isItem == true && Input.GetKeyDown(KeyCode.X))
+        if(isItem == true)
         {
-            itemTaken = true;
-            isItem = false;
-            itemGiven = false;
+            xPlayer.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                itemTaken = true;
+                isItem = false;
+                itemGiven = false;
+                xPlayer.SetActive(false);
+                inventoryText.text = "Inventory : " + items[j];
+            }
         }
     }
     void AnimatePlayer()
@@ -73,16 +102,18 @@ public class PlayerMovement : MonoBehaviour
     {
         for(int i = 0; i < items.Length; i++)
         {
-            if (collision.gameObject.tag == items[i] && itemTaken == false)
+            if (collision.gameObject.tag == items[i])
             {
-                j = i;
-                isItem = true;
-                
+                if (itemTaken == false)
+                {
+                    j = i;
+                    isItem = true;
+                }
             }  
         }
         if (collision.gameObject.CompareTag("Dustbin"))
         {
-            nearBin = true;
+            nearBin = true; 
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -90,12 +121,17 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Dustbin"))
         {
             nearBin = false;
+            xDustbin.SetActive(false);
         }
         for (int i = 0; i < items.Length; i++)
         {
-            if (collision.gameObject.tag == items[i] && itemTaken == false)
+            if (collision.gameObject.tag == items[i])
             {
-                isItem = false;
+                xPlayer.SetActive(false);
+                if (itemTaken == false)
+                {
+                    isItem = false;
+                }
             }
         }
     }
@@ -103,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Customer"))
         {
+            ePlayer.SetActive(true);
             isCustomer = true;
         }
     }
@@ -110,6 +147,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Customer"))
         {
+            ePlayer.SetActive(false);
             isCustomer = false;
         }
     }

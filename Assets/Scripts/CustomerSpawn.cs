@@ -9,7 +9,8 @@ public class CustomerSpawn : MonoBehaviour
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI nameText;
-    int i = 0;
+    public int i = 0;
+    public float spawnDelay = 5f;
     public bool customerSpawned = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,9 +33,8 @@ public class CustomerSpawn : MonoBehaviour
         if (i < customerPrefab.Length)
         {
             customerSpawned = true;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(spawnDelay);
             Instantiate(customerPrefab[i], transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(3f);
             customerSpawned = false;
             i++;
         }
