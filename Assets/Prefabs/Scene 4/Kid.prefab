@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6809982630292205614}
   - component: {fileID: 2896925130916151302}
   - component: {fileID: 7231725482440073064}
-  - component: {fileID: 8428352272209116287}
+  - component: {fileID: -3230995035082625630}
   m_Layer: 0
   m_Name: Kid
   m_TagString: Customer
@@ -163,7 +163,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.31786817, y: 0.26929337}
   m_EdgeRadius: 0
---- !u!114 &8428352272209116287
+--- !u!114 &-3230995035082625630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,23 +172,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 8948156343107538782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74593e553cddc39468b06b45bc0933e3, type: 3}
+  m_Script: {fileID: 11500000, guid: ef9bf7c197b73c340b8cb262caca084e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Customer
+  m_EditorClassIdentifier: Assembly-CSharp::FinalDay
   dialogueLines:
-  - Hi Old man!
-  - How are you?
-  - Please can you give me some tomatoes...
-  requiredItem:
-  - Tomato
+  - <i>La la la la</i>
+  - Did i sing well?
+  - ...
+  - I had my final exam yesterday, it kinda went between average and good
+  - Now i'm finally gonna enter into my new era of schooling... Geez! the responsibilities...
+  - Glad you were always there for me, witnessing my entire life.
+  - Welp, mom sent me to buy some milk but perhaps you ran all out of stocks
+  - Also, you look very sick old man... Take care of yourself
+  - ...
+  - '* Recieves a candy for free from the old man *'
+  - A candy again!!? Thank you so much! I love you old man.
   npcName:
   - Nina
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   nameText: {fileID: 0}
-  playerIsClose: 0
   line: 0
-  playerMovementScript: {fileID: 0}
   waitingPoint: {fileID: 0}
   spawnPoint: {fileID: 0}
   speed: 2

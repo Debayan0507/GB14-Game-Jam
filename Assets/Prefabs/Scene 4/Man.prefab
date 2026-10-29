@@ -176,13 +176,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   dialogueLines:
-  - What's up old man?
-  - I have been watching you since my childhood...
-  - It does hurts seeing you turn so old...
-  - But hey! that's life right?
-  - Now give me what's white and has calcium source in it
+  - 'Man you alright? You look worse than before today. I know you live alone and
+    don''t have anyone to look after you but... '
+  - C'mon man, you need to look after yourself. Take care of yourself old man.
+  - This town can't afford losing you.
+  - Alright, give me what's red, rich in Vitamin A and sometimes considered a fruit.
+  - ...
+  - Oh, i see those are spoiled...
+  - Umm... It's alright, i'll come back tomorrow for them.
+  - For now, give me those fat carbohydrate-rich stuffs that grows underground.
+  - ...
+  - Your Canopy is in a very poor condition as well, you really got a lot of things
+    to be taken care of old man.
+  - Alright, i know you don't like recieving favours but i am gonna offer you my
+    help anyway, don't refuse it.
+  - I'll come back tomorrow with all the necessary tools and I'm gonna fix your canopy.
   requiredItem:
-  - Milk
+  - Potato
   npcName:
   - John
   dialoguePanel: {fileID: 0}
@@ -193,5 +203,7 @@ MonoBehaviour:
   playerMovementScript: {fileID: 0}
   waitingPoint: {fileID: 0}
   spawnPoint: {fileID: 0}
+  endPoint: {fileID: 0}
+  player: {fileID: 0}
   speed: 2
   isWaiting: 0

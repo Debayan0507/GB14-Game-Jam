@@ -176,14 +176,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalDay
   dialogueLines:
-  - Fly high homie
-  requiredItem: []
+  - ...
+  - But i said i would come back...
+  - Should've listened to me...
   npcName:
-  - Man
+  - John
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   nameText: {fileID: 0}
-  canopyIsClose: 0
   line: 0
   waitingPoint: {fileID: 0}
   spawnPoint: {fileID: 0}

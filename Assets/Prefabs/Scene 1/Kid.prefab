@@ -176,9 +176,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   dialogueLines:
-  - Hi Old man!
-  - How are you?
-  - Please can you give me some tomatoes...
+  - Hey where's my candy today?
+  - ...
+  - Anyways, Mom told me to buy some tomatoes
   requiredItem:
   - Tomato
   npcName:
@@ -191,5 +191,7 @@ MonoBehaviour:
   playerMovementScript: {fileID: 0}
   waitingPoint: {fileID: 0}
   spawnPoint: {fileID: 0}
+  endPoint: {fileID: 0}
+  player: {fileID: 0}
   speed: 2
   isWaiting: 0

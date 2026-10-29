@@ -130,7 +130,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   dialogueLines:
-  - Ah
+  - I've heard there's roberry happening around the town
+  - If you see those guys, let them know i'm watching over them!
+  - But for now my wife's watching over me.
+  - I have to get back home with tomatoes before she put a bullet through me.
   requiredItem:
   - Tomato
   npcName:

@@ -176,17 +176,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalDay
   dialogueLines:
-  - So this is it huh...
-  - You left us
-  requiredItem: []
+  - Where's my old man?
+  - 'Where is that kind hearted soul '
+  - that used to give me...
+  - free CANDIES!!!
+  - You were supposed to see me grow...
+  - You were supposed to see me graduate, see me pursue a job...
+  - Attend my wedding, Watch me have a family...
+  - My kids were supposed to come to your shop and buy candies.
+  - I'll miss you my old man...
   npcName:
   - Nina
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   nameText: {fileID: 0}
-  canopyIsClose: 0
   line: 0
   waitingPoint: {fileID: 0}
   spawnPoint: {fileID: 0}
-  speed: 2
+  speed: 3
   isWaiting: 0

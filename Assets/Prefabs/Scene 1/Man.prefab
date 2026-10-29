@@ -193,5 +193,7 @@ MonoBehaviour:
   playerMovementScript: {fileID: 0}
   waitingPoint: {fileID: 0}
   spawnPoint: {fileID: 0}
+  endPoint: {fileID: 0}
+  player: {fileID: 0}
   speed: 2
   isWaiting: 0

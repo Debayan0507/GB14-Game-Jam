@@ -176,16 +176,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalDay
   dialogueLines:
-  - But i said i would come back
-  requiredItem: []
+  - ...
+  - '* Cries in tears *'
+  - You were like my Big brother... I used to share with you everything i had in
+    me
+  - Won't be easy for me... letting you go.
+  - 'See you soon in heaven '
   npcName:
   - Grandma
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   nameText: {fileID: 0}
-  canopyIsClose: 0
   line: 0
   waitingPoint: {fileID: 0}
   spawnPoint: {fileID: 0}
-  speed: 2
+  speed: 4
   isWaiting: 0

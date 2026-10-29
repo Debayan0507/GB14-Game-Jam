@@ -48,6 +48,7 @@ public class FinalDay : MonoBehaviour
     {
         if (line < dialogueLines.Length)
         {
+            Time.timeScale = 0f;
             dialoguePanel.SetActive(true);
             nameText.text = npcName[0];
             dialogueText.text = dialogueLines[line];
@@ -58,6 +59,7 @@ public class FinalDay : MonoBehaviour
         }
         if (line == dialogueLines.Length)
         {
+            Time.timeScale = 1f;
             dialoguePanel.SetActive(false);
             MoveToSpawn();
         }

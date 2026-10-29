@@ -130,9 +130,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   dialogueLines:
-  - Hey old man! How are you?
-  - It's a pretty sunny day...
-  - and yet, i came to buy Milk!
+  - Hey old man, it's a pretty sunny day.
+  - As usual, I came to buy milk.
+  - You can get close to the Milk basket and press 'X' to take the item.
+  - If you pick the wrong item, Go near the dustbin and press 'X' again to dump the
+    item from the inventory.
+  - Then get near the customer and press 'X' to sell the required item.
   requiredItem:
   - Milk
   npcName:
@@ -145,6 +148,8 @@ MonoBehaviour:
   playerMovementScript: {fileID: 0}
   waitingPoint: {fileID: 0}
   spawnPoint: {fileID: 0}
+  endPoint: {fileID: 0}
+  player: {fileID: 0}
   speed: 1.5
   isWaiting: 0
 --- !u!61 &4293802524544410522

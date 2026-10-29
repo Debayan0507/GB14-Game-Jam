@@ -130,11 +130,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   dialogueLines:
-  - Hey old man! How are you?
-  - It's a pretty sunny day...
-  - and yet, i came to buy Milk!
+  - Phew! It was a rough day today...
+  - If it wasn't for my grandson, i would have been living life hopelessly
+  - I see that you now have some candies in your canopy
+  - Give me some for my grandson
   requiredItem:
-  - Milk
+  - Candy
   npcName:
   - Grandma
   dialoguePanel: {fileID: 0}
@@ -145,6 +146,8 @@ MonoBehaviour:
   playerMovementScript: {fileID: 0}
   waitingPoint: {fileID: 0}
   spawnPoint: {fileID: 0}
+  endPoint: {fileID: 0}
+  player: {fileID: 0}
   speed: 1.5
   isWaiting: 0
 --- !u!61 &4293802524544410522

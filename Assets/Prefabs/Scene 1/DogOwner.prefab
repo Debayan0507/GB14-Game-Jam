@@ -176,12 +176,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   dialogueLines:
-  - Hi
-  - La
+  - Good morning old man! Look my Dog's healthy again haha...
+  - I need some milk for my Dog and of course me. Kindly give me some milk
+  - Also i am going on a vacation at the hills, so guess i would be seeing you soon!
   requiredItem:
   - Milk
   npcName:
-  - John
+  - Tyler
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   nameText: {fileID: 0}

@@ -176,12 +176,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   dialogueLines:
-  - Hi
-  - La
+  - What's up my old man
+  - My vacation at the hills went good
+  - Me and my Dog went brrrrr at the Hills!
+  - This was my life's very first trekking and it was absolutely worth it, down to
+    every single penny.
+  - I mean i did wished if i had friends to go on a vacation with...
+  - But guess what? I regret nothing. My dog is the best companion i ever have and
+    forever will
+  - After all, Dog's are the "Man's Best Friend"
+  - So, i'm gonna give my Bestfriend a treat. Give me one candy please.
   requiredItem:
-  - Milk
+  - Candy
   npcName:
-  - John
+  - Tyler
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   nameText: {fileID: 0}

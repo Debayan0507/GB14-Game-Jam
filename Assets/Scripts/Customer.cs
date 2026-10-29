@@ -58,6 +58,7 @@ public class Customer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && line < dialogueLines.Length)
         {
+            Time.timeScale = 0f;
             playerMovementScript.ePlayer.SetActive(false);
             dialoguePanel.SetActive(true);
             nameText.text = npcName[0];
@@ -66,6 +67,7 @@ public class Customer : MonoBehaviour
         }
         else if (line == dialogueLines.Length && Input.GetKeyDown(KeyCode.E))
         {
+            Time.timeScale = 1f;
             playerMovementScript.ePlayer.SetActive(true);
             line = 0;
             dialoguePanel.SetActive(false);

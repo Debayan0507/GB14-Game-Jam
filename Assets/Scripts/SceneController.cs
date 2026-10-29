@@ -6,6 +6,9 @@ using UnityEngine.UIElements;
 
 public class SceneController : MonoBehaviour
 {
+    public AudioSource gameAudioSource;
+    public AudioClip gameAudioClip;
+    public AudioClip sadAudioClip;
     public Animator transition;
     public TextMeshProUGUI dayCountText;
     public TextMeshProUGUI endText;
@@ -15,6 +18,8 @@ public class SceneController : MonoBehaviour
     private static SceneController sceneControllerScript;
     void Awake()
     {
+        gameAudioSource = GetComponent<AudioSource>();
+        gameAudioSource.clip = gameAudioClip;
         endText = GameObject.Find("EndText").GetComponent<TextMeshProUGUI>();
         endText.text = string.Empty;
         dayCountText = GameObject.Find("DayCount Text").GetComponent<TextMeshProUGUI>();
@@ -50,7 +55,7 @@ public class SceneController : MonoBehaviour
         {
             StartCoroutine(NextScene());
         }
-        if(customerSpawnScript.i >= customerSpawnScript.customerPrefab.Length && GameObject.FindWithTag("Customer") == null && SceneManager.GetActiveScene().buildIndex == 5)
+        if(customerSpawnScript.i >= customerSpawnScript.customerPrefab.Length && GameObject.FindWithTag("Customer") == null && SceneManager.GetActiveScene().buildIndex == 5 && customerSpawnScript.customerSpawned == false)
         {
             StartCoroutine(LastDay());
         }
@@ -59,11 +64,22 @@ public class SceneController : MonoBehaviour
     {   
         customerSpawnScript.i = 0;
         yield return new WaitForSeconds(nextSceneDelay);
+        gameAudioSource.Stop();
         transition.SetTrigger("End");
         dayCountText.text = $"Day {++dayCount}";
         yield return new WaitForSeconds(2f);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        yield return new WaitForSeconds(1f);
         transition.SetTrigger("Start");
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            gameAudioSource.clip = sadAudioClip;
+        }
+        else
+        {
+            gameAudioSource.clip = gameAudioClip;
+        }
+        gameAudioSource.Play();
         yield return new WaitForSeconds(1f);
         dayCountText.text = string.Empty;
     }
@@ -71,13 +87,14 @@ public class SceneController : MonoBehaviour
     { 
         dayCountText.text = $"Day {dayCount}";
         yield return new WaitForSeconds(1f);
+        gameAudioSource.Play();
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(1f);   
         dayCountText.text = string.Empty;
     }
     IEnumerator LastDay()
     {
-        customerSpawnScript.i = 0;
+        customerSpawnScript.customerSpawned = true;
         yield return new WaitForSeconds(nextSceneDelay);
         transition.SetTrigger("End");
         yield return new WaitForSeconds(1f);
@@ -85,6 +102,7 @@ public class SceneController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         endText.text = "Thanks for Playing!";
         yield return new WaitForSeconds(3f);
+        gameAudioSource.Stop();
         endText.text = string.Empty;
         SceneManager.LoadScene(0);
         Destroy(gameObject);

@@ -130,9 +130,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   dialogueLines:
-  - Ah
+  - Hey Shopkeeper! You got any infomation related to those burglars?
+  - 'Consider yourself as my Undercover Agent... '
+  - Those enemies shall not escape your sight!
+  - If you see them, report to me
+  - But for now i gotta report to my wife, give me some Milk
   requiredItem:
-  - Tomato
+  - Milk
   npcName:
   - Police
   dialoguePanel: {fileID: 0}

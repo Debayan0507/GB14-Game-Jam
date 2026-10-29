@@ -176,8 +176,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalDay
   dialogueLines:
-  - g
-  - g
+  - Thanks for your service... Agent
+  - You did well...
+  - Those burglars are now in custody
+  - Your sacrifice shall be remembered.
+  - Rest in Peace
   npcName:
   - Police
   dialoguePanel: {fileID: 0}

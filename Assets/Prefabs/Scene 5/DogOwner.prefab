@@ -176,11 +176,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalDay
   dialogueLines:
-  - la
-  - la
-  - la
+  - So, this is it huh...
+  - You left us
+  - ...
+  - '* Dog barks while making sad noises *'
+  - Goodbye old man...
   npcName:
-  - John
+  - Tyler
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   nameText: {fileID: 0}
